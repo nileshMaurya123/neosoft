@@ -179,6 +179,8 @@ console.log(index);
 let arr = [1, 2, 3];
 console.log(arr.includes(2));  
 console.log(arr.includes(5));  
+
+// It checks true or false.
 */
 
 // Q16. How do you reverse the elements of an array?
@@ -211,5 +213,105 @@ console.log(arr);
 strings = ["banana", "apple", "cherry"]
 strings.sort()
 console.log(strings);
+
+*/
+
+// Q19. How do you merge two arrays?
+
+// Answer 19: By using concat() we merge two arrays.
+
+/*
+
+Example:  
+let arr1 = [1, 2, 3];
+let arr2 = [4, 5, 6];
+
+// Using concat
+let merged = arr1.concat(arr2);
+
+*/
+
+// Q20. How do you copy an array?
+
+// Answer 20: By using spread operator(...) we can copy an array.
+
+/*
+
+Example:
+ const originalArray = [1, 2, { a: 3 }];
+ const copiedArray = [...originalArray];
+
+ console.log(copiedArray);
+
+ */
+
+// Q21. How do you get a part of an array?
+
+// Answer 21: By using slice() method.
+
+/*
+let arr = [1, 2, 3, 4, 5];
+let part = arr.slice(1, 4);
+*/
+
+// Q22.  What is the difference between slice() and splice()?
+
+/* Answer 22:
+ 
+ slice : Extracts a portion of an array without modifying the original array.
+
+let arr = [1, 2, 3, 4, 5];
+
+let slicedArr = arr.slice(1, 4); // [2, 3, 4]
+
+console.log(arr); // [1, 2, 3, 4, 5] 
+console.log(slicedArr); // [2, 3, 4]
+
+
+
+splice : Modifies the original array by removing, adding, or replacing elements.
+
+let arr = [1, 2, 3, 4, 5];
+
+let removed = arr.splice(1, 2);  // Removes 2 elements starting from index 1
+
+console.log(arr);  // 
+console.log(removed);  // 
+
+*/
+
+// Q23. How do you remove elements from an array using splice()?
+
+// Syntax:   array.splice(startIndex, deleteCount);
+
+/*
+
+let arr = [1, 2, 3, 4, 5];
+
+arr.splice(2, 2);  
+
+console.log(arr)
+
+*/
+
+// Q24.  How do you replace elements in an array using splice()?
+
+/*
+
+let arr = [1, 2, 3, 4];
+arr.splice(1, 2, 'x', 'y');
+console.log(arr)
+
+*/
+
+// Q25. How do you add elements in an array using splice()?
+
+/*
+let fruits = ['apple', 'banana', 'mango'];
+
+// Add 'orange' and 'grape' at index 1 (before 'banana')
+fruits.splice(1, 0, 'orange', 'grape');
+
+console.log(fruits);
 
 */
