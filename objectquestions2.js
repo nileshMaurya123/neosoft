@@ -264,3 +264,133 @@ const person7 = {
 person7.fullName = "Alice Smith";
 console.log(person7.firstName);
 console.log(person7.lastName);
+
+/* 
+Q-43. How do you define getters and setters in an object?
+ */
+
+const obj1 = {
+  _property: 42, // ✅ set an actual value
+
+  // Getter
+  get property() {
+    return this._property;
+  },
+
+  // Setter
+  set property(value) {
+    this._property = value;
+  },
+};
+
+console.log(obj1.property); // 42
+obj1.property = 100;
+console.log(obj1.property); // 100
+
+/* Q-44. What is the difference between in operator and hasOwnProperty()? */
+/* 
+1. in Operator
+
+Checks if the property exists anywhere in the object's prototype chain (including inherited properties).
+
+2. hasOwnProperty() Method
+
+Checks if the property is a direct property of the object (not inherited).
+
+
+*/
+
+/* Q-45.  What is prototype in JavaScript objects? */
+
+/* In JavaScript, a prototype is an object that other objects inherit properties and methods from. 
+It's a core part of JavaScript's inheritance system, known as prototype-based inheritance. */
+
+function Person(first, last, age, eye) {
+  this.firstName = first;
+  this.lastName = last;
+  this.age = age;
+  this.eyeColor = eye;
+}
+
+const myFather = new Person("John", "Doe", 50, "blue");
+const myMother = new Person("Sally", "Rally", 48, "green");
+
+console.log(`My father is ${myFather.age}. My mother is ${myMother.age}.`);
+
+/* 
+Q-46.  How do you create an object with a prototype?
+
+A-46. By using Object.create() 
+*/
+
+const animal = {
+  speak() {
+    console.log("Animal speaks");
+  },
+};
+
+const dog = Object.create(animal);
+dog.name = "Buddy";
+
+dog.speak();
+console.log(dog.name);
+console.log(Object.getPrototypeOf(dog) === animal);
+
+/* 
+Q-47.  How do you check the prototype of an object?
+A-47. By using Object.getPrototypeOf(obj) we check the prototype of object.
+
+*/
+
+const animals = {
+  speak() {
+    console.log("Animal speaks");
+  },
+};
+
+const dogs = Object.create(animals);
+
+console.log(Object.getPrototypeOf(dogs) === animals);
+console.log(dogs.__proto__ === animals);
+
+/* 
+Q-48. What is Object.create()?
+
+Ans-48. Object.create() in JavaScript
+
+Object.create() is a method used to create a new object and explicitly set its prototype to another object.
+
+*/
+
+/* 
+Q-49. What is Object.assign()?
+Ans-49. Object.assign() in JavaScript
+
+Object.assign() is a method used to copy properties from one or more source objects to a target object
+*/
+
+const target = { a: 1 };
+const source = { b: 2, c: 3 };
+
+const result = Object.assign(target, source);
+
+console.log(result);
+console.log(target);
+
+/* 
+Q-50. What are symbols in JavaScript objects? 
+
+Ans-50. Symbol is a primitive data type used to create unique and immutable keys for object properties.
+
+Syntax : const mySymbol = Symbol("description");
+*/
+
+const id = Symbol("id");
+
+const users = {
+  name: "Alice",
+  [id]: 12345,
+};
+
+console.log(users.name);
+console.log(users[id]);
