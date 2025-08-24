@@ -214,6 +214,22 @@ Given: const state = { step: 1 }
 Goal: Change step to 2, but adding 'done' should fail
 */
 
+const state = { step: 1 };
+
+// Seal the object
+Object.seal(state);
+
+// Modify an existing property
+state.step = 2;
+
+// Try to add a new property
+state.done = true;
+
+// Try to delete a property
+delete state.step;
+
+console.log(state);
+
 /* 
 Q-16. Count how many properties an object has. 
 Given: const user = { id: 5, name: 'Lee', active: true }
@@ -343,3 +359,66 @@ Goal: Return { Pune: [{id:1, city:'Pune'}, {id:3, city:'Pune'}], Mumbai: [{id:2,
 
 
 */
+
+const users2 = [
+  { id: 1, city: "Pune" },
+  { id: 2, city: "Mumbai" },
+  { id: 3, city: "Pune" },
+];
+
+const groupedUsers = users2.reduce((acc, user) => {
+  // If the city does not exist in the accumulator, initialize it as an empty array
+  if (!acc[user.city]) {
+    acc[user.city] = [];
+  }
+
+  // Push the user into the corresponding city's array
+  acc[user.city].push(user);
+
+  return acc;
+}, {});
+
+console.log(groupedUsers);
+
+/*
+
+
+Q24. Find an object in an array by id and return it. 
+Given: items = [{id:1, name:'A'}, {id:2, name:'B'}], id = 2
+Goal: Return {id:2, name:'B'}
+
+
+*/
+
+const items = [
+  { id: 1, name: "A" },
+  { id: 2, name: "B" },
+];
+
+const id = 2;
+
+const item = items.find((item) => item.id === id);
+
+console.log(item);
+
+/* 
+
+Q25. Update an object in an array by id (immutably return new array).
+Given: items = [{id:1, qty:2}, {id:2, qty:5}], id = 1, newQty = 3 
+Goal: Return [{id:1, qty:3}, {id:2, qty:5}]
+
+*/
+
+const items2 = [
+  { id: 1, qty: 2 },
+  { id: 2, qty: 5 },
+];
+
+const id2 = 1;
+const newQty = 3;
+
+const updatedItems = items2.map((item) =>
+  item.id === id2 ? { ...item, qty: newQty } : item
+);
+
+console.log(updatedItems);
