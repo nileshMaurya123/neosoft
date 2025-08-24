@@ -12,7 +12,8 @@ const updatedItems = items.filter((item) => item.id !== id);
 
 console.log(updatedItems);
 
-/* Q-27. Convert an object to a query string 'a=1&b;=2' (encode keys/values).
+/* 
+Q-27. Convert an object to a query string 'a=1&b;=2' (encode keys/values).
 Given: const params = { a: 1, b: 'hi' } 
 Goal: Return 'a=1&b;=hi'
 */
