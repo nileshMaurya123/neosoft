@@ -128,7 +128,7 @@ const user2 = {
   // no age provided
 };
 
-const { name, age = 30 } = user;
+const { name, age = 30 } = user2;
 
 console.log(name);
 console.log(age);
@@ -143,7 +143,7 @@ const user3 = {
   // no age provided
 };
 
-const { name2, age2 = 30 } = user;
+const { name2, age2 = 30 } = user3;
 
 console.log(name2);
 console.log(age2);
@@ -158,7 +158,7 @@ const user4 = {
   email: "mike@example.com",
 };
 
-const { name3, ...rest } = user;
+const { name3, ...rest } = user4;
 
 console.log(name3);
 console.log(rest);
@@ -186,7 +186,7 @@ const original1 = {
   age: 25,
 };
 
-const clone1 = { ...original };
+const clone1 = { ...original1 };
 
 console.log(clone1);
 console.log(clone1 === original1);
@@ -200,7 +200,7 @@ const original2 = {
   age: 25,
 };
 
-const clone2 = { ...original };
+const clone2 = { ...original2 };
 
 console.log(clone2);
 console.log(clone2 === original2);
