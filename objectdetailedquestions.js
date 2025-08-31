@@ -214,21 +214,21 @@ Given: const state = { step: 1 }
 Goal: Change step to 2, but adding 'done' should fail
 */
 
-const state = { step: 1 };
+const state2 = { step: 1 };
 
 // Seal the object
-Object.seal(state);
+Object.seal(state2);
 
 // Modify an existing property
-state.step = 2;
+state2.step = 2;
 
 // Try to add a new property
-state.done = true;
+state2.done = true;
 
 // Try to delete a property
-delete state.step;
+delete state2.step;
 
-console.log(state);
+console.log(state2);
 
 /* 
 Q-16. Count how many properties an object has. 
