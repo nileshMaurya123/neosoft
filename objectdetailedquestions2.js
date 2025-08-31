@@ -472,14 +472,15 @@ Goal: Return { a: { b: { d: 2 } } }
 const obj7 = { a: { b: { c: 1, d: 2 } } };
 const path7 = "a.b.c";
 
-// Function to delete a deeply nested key
-function deleteByPath(obj7, path7) {
-  const keys = path7.split("."); // Split the path into an array of keys
-  const newObj = { ...obj7 }; // Create a shallow copy of the original object
+// Function to delete a deeply nested key immutably
+function deleteByPath(obj, path) {
+  const keys = path.split(".");
+  const newObj = { ...obj }; // Shallow copy of root
 
   let current = newObj;
   for (let i = 0; i < keys.length - 1; i++) {
-    current = current[keys[i]] = { ...current[keys[i]] }; // Copy nested objects
+    current[keys[i]] = { ...current[keys[i]] }; // Shallow copy at each level
+    current = current[keys[i]];
   }
 
   delete current[keys[keys.length - 1]]; // Delete the final key
@@ -487,9 +488,10 @@ function deleteByPath(obj7, path7) {
 }
 
 // Call the function
-const updatedObj = deleteByPath(obj, path);
+const updatedObj = deleteByPath(obj7, path7);
 
-console.log(updatedObj);
+console.log("Original:", obj7);
+console.log("Updated :", updatedObj);
 
 /* 
 Q49. Replace keys using a mapping object (rename multiple keys).
