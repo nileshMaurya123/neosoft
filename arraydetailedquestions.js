@@ -115,6 +115,14 @@ Given: arr = [10, 20, 30, 40, 50], k = 1
 Goal: Return [50, 10, 20, 30, 40]
 */
 
+function reverse(arr, start, end) {
+  while (start < end) {
+    [arr[start], arr[end]] = [arr[end], arr[start]];
+    start++;
+    end--;
+  }
+}
+
 function rotateRight(arr, k) {
   k = k % arr.length;
   reverse(arr, 0, arr.length - 1);
@@ -198,7 +206,7 @@ function findMin(arr) {
   return min;
 }
 
-console.log(findMin(arr12)); // 2
+console.log(findMin(arr12));
 
 /*
 Q11. Find the second largest number in the array (distinct values). 
