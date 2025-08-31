@@ -187,10 +187,10 @@ Goal: Clone so that src.b !== clone.b
 
 const src1 = { a: 1, b: { c: 2 } };
 
-const clone1 = JSON.parse(JSON.stringify(src));
+const clone1 = JSON.parse(JSON.stringify(src1));
 
 console.log(clone1);
-console.log(src1.b === clone.b);
+console.log(src1.b !== clone1.b);
 
 /*
 Q14. Freeze an object and demonstrate that updates do not apply. 
