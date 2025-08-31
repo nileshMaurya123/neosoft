@@ -191,6 +191,7 @@ if (arr4.length === 0) {
 
 let originalArray = [1, 2, 3];
 let clonedArray = [...originalArray];
+console.log(clonedArray);
 
 // Q 43: How do you destructure an array?
 
