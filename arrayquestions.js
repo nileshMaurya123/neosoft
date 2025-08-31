@@ -70,7 +70,7 @@ By using .push() method we can add element to the end of an array.
 //example :
 let cars2 = ["BMW", "Mercedes", "Toyota"];
 
-cars.push("Herculeus");
+cars2.push("Herculeus");
 console.log(cars2);
 
 // Q7. How do you add an element to the beginning of an array?
@@ -201,6 +201,7 @@ console.log(copiedArray);
 
 let arr12 = [1, 2, 3, 4, 5];
 let part = arr12.slice(1, 4);
+console.log(part);
 
 // Q22.  What is the difference between slice() and splice()?
 
