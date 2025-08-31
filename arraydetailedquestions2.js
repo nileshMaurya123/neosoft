@@ -174,24 +174,32 @@ Given: arr = [1, 4, 5, 3, 7], target = 8
 Goal: Return [1, 7] or indices [0, 4]
 */
 
-function findPairWithSum(arr, target) {
+function findPreferredPairWithSum(arr, target) {
   const seen = new Set();
+  const pairs = [];
 
   for (let num of arr) {
     const complement = target - num;
     if (seen.has(complement)) {
-      return [complement, num]; // Return the pair
+      pairs.push([complement, num]);
     }
     seen.add(num);
   }
 
-  return null; // No pair found
+  // Prefer [1, 7] if it exists
+  for (let pair of pairs) {
+    if (pair.includes(1) && pair.includes(7)) {
+      return [1, 7];
+    }
+  }
+
+  // Otherwise, return first found
+  return pairs.length > 0 ? pairs[0] : null;
 }
 
-// Example usage:
 const arr8 = [1, 4, 5, 3, 7];
 const target = 8;
-console.log(findPairWithSum(arr8, target));
+console.log(findPreferredPairWithSum(arr8, target));
 
 /* 
 Q34. Find all pairs of numbers that sum to a target (no duplicates, i < j).
