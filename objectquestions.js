@@ -241,7 +241,7 @@ Object.freeze(myperson2);
 
 myperson2.age = 40;
 myperson2.city = "Paris";
-delete person2.name;
+delete myperson2.name;
 
 console.log(myperson2);
 
