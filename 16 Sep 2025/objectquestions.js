@@ -107,3 +107,43 @@ obj2 = { b: 9, c: 3 };
 
 const merged = { ...obj1, ...obj2 };
 console.log(merged);
+
+/* 
+Q12. Create a shallow clone of an object (changes to clone should not affect original top-level fields). 
+Given: const src = { x: 1, y: 2 }
+Goal: Return a new object { x: 1, y: 2 }
+
+*/
+
+const src = { x: 1, y: 2 };
+const clone = { ...src };
+
+console.log(clone);
+
+/* 
+
+Q16. Count how many properties an object has. 
+Given: const user = { id: 5, name: 'Lee', active: true }
+Goal: Return 3
+*/
+
+const user2 = { id: 5, name: "Lee", active: true };
+const count = Object.keys(user2).length;
+console.log(user2);
+
+/* 
+Q19. Rename a key in an object (create new object with 'fname' → 'firstName').
+Given: const user = { id: 1, fname: 'Aditi', city: 'Pune' } 
+Goal: Return { id: 1, firstName: 'Aditi', city: 'Pune' }
+
+*/
+
+const user3 = { id: 1, fname: "Aditi", city: "Pune" };
+
+const newUser = {
+  id: user3.id,
+  firstName: user3.fname,
+  city: user3.city,
+};
+
+console.log(newUser);
