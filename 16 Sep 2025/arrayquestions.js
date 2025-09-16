@@ -244,7 +244,7 @@ function relativeDifference(arr1, arr2) {
   return result;
 }
 
-// Example usage:
+// Example usage: 1
 const arr24 = [1, 2, 3, 4];
 const arr25 = [3, 4, 5];
 console.log(relativeDifference(arr24, arr25));
