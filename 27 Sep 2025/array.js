@@ -57,12 +57,14 @@ function maxnumber() {
   console.log(max);
 }
 let arrmax = [12, 45, 7, 89, 23];
-console.log(maxnumber(arrmax));
+
+console.log("rrere===>", maxnumber(arrmax));
 
 /* 
 Question 5:- Write code to reverse this array without using reverse():
 let arr = [1, 2, 3, 4, 5];
 */
+
 /*
 const reversearr=[1,2,3,4,5];
 for(let i=0; i<reversearr.length;i++){
