@@ -40,7 +40,7 @@ Goal: Return [1, 2, 3, 4, 5]
 */
 
 /* 
-Steps to Solve
+Steps to Solve:
 
 1. I will define a function.
 2. I will take a empty array name result.
@@ -140,3 +140,34 @@ const from = 2;
 const to = 9;
 
 console.log("ReplaceArray===>", replaceAll(arr4, from, to));
+
+/*
+Q30. Compute element-wise sum of two arrays of equal length.
+Given: arr1 = [1, 2, 3], arr2 = [4, 5, 6] Goal: Return [5, 7, 9]
+*/
+
+/* 
+Steps to Solve:
+
+1. Define a function that takes two arrays as input.
+2. Create an empty array result to store the sums.
+3. Loop over the arrays using index i.
+4. At each index, sum arr1[i] + arr2[i].
+5. Push the sum into the result array.
+6. After the loop, return the result array.
+*/
+
+function sumArrays(arr1, arr5) {
+  const result = [];
+
+  for (let i = 0; i < arr1.length; i++) {
+    result.push(arr1[i] + arr5[i]);
+  }
+
+  return result;
+}
+
+const arr1 = [1, 2, 3];
+const arr5 = [4, 5, 6];
+
+console.log("Elementwise Sum===>", sumArrays(arr1, arr5));
