@@ -15,8 +15,8 @@ Step: 5 Dono array ko empty array mein push kar diya.
 */
 
 function mergearray() {
-  let arr1 = [1, 2, 4];
-  let arr2 = [4, 6, 7];
+  let arr1 = [1, 2, 3];
+  let arr2 = [4, 5, 6];
 
   let arr3 = [];
 
@@ -332,7 +332,7 @@ function countOccurrences() {
     }
   }
 
-  console.log("Q12: Occurrences of====>", count);
+  console.log("Q12: Occurrences of", target, "=", count);
 }
 
 countOccurrences();
@@ -355,18 +355,20 @@ Steps to Solve the problem:
 
 */
 
-function firstOccurrences() {
-  let arr = [4, 7, 9, 7, 2];
-  let target = 7;
+function countOccurrences() {
+  let arr = [3, 5, 3, 2, 3, 1];
+  let target = 3;
+  let count = 0;
 
   for (let i = 0; i < arr.length; i++) {
     if (arr[i] === target) {
-      console.log("Q13: FirstOccurence====>", i);
-      return;
+      count++;
     }
   }
+
+  console.log("Q13: CountOccurrences====>", count);
 }
-firstOccurrences();
+countOccurrences();
 
 /*
 Q14. Find the index of the last occurrence of a target value (manual search).
@@ -389,10 +391,12 @@ function lastOccurrence() {
 
   for (let i = arr.length - 1; i >= 0; i--) {
     if (arr[i] === target) {
-      console.log("Q14: Last occurrence===>", i);
+      console.log("Last occurrence index:", i); // 3
       return;
     }
   }
+
+  console.log("Q14: LastOccurence===>", "Not found");
 }
 lastOccurrence();
 
@@ -411,8 +415,8 @@ Steps to Solve
 5. JavaScript me if (arr[i]) likhne par
 6. Agar value truthy hai to if chalega,
 7. Falsy (0, '', false, null, undefined, NaN) skip ho jaayega.
-8. Agar truthy hai to cleaned.push(arr[i]).
-9. Loop ke baad cleaned print/return karo.
+8. Agar truthy hai to filtered.push(arr[i]).
+9. Loop ke baad filtered print/return karo.
 */
 
 function removeFalsy() {
